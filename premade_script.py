@@ -1,5 +1,8 @@
+import csv
+
 premade_list = []
 
+"""
 raw_data = open("premade_safe.txt", "r")
 read_data = raw_data.read()
 entities = read_data.split("/x1E")
@@ -8,9 +11,9 @@ for entity in entities:
         print(entity.split("/x1F"))
         premade_list.append(entity.split("/x1F"))
 raw_data.close()
+"""
 
-print(premade_list)
-
-def save_data():
-    raw_data = open("premade_safe", "w")
-    raw_data.write
+with open("premade_safe.csv", "r") as saved_data:
+    reader = csv.reader(saved_data, delimiter=";")
+    for row in reader:
+        premade_list.append(row)
